@@ -25,6 +25,6 @@ const prisma = new PrismaClient()
      }
  })
 
- server.listen().then(({ url }) =>
-        console.log(`Server is running on ${url}`)
-    );
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+    console.log(`🚀  Server ready at ${url}`);
+});

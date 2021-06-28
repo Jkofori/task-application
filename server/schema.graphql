@@ -1,5 +1,16 @@
+enum Order {
+    asc
+    desc
+}
+
+input SortBy {
+    id: Order
+    text: Order
+    createdAt: Order
+}
+
 type Query {
-    tasks: [Task!]!
+    tasks(orderBy: SortBy): [Task!]!
 }
 
 type Mutation {
@@ -11,4 +22,5 @@ type Mutation {
 type Task {
     id: ID!
     text: String!
- }
+    createdAt: String!
+}

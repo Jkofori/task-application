@@ -2,9 +2,10 @@ import { gql } from '@apollo/client';
 
 const tasksQuery = gql`
     {
-        tasks {
+        tasks(orderBy: { createdAt: asc }) {
             text
             id
+            createdAt
         }
     }
 `;
